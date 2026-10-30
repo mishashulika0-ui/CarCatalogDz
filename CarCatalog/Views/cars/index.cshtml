@@ -1,0 +1,28 @@
+@model IEnumerable<CarCatalog.Models.Car>
+
+@{
+    ViewData["Title"] = "Каталог автомобілів";
+}
+
+<h1>Каталог автомобілів</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Марка</th>
+            <th>Модель</th>
+            <th>Ціна ($)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @* ОСЬ ТОЙ САМИЙ ЦИКЛ FOREACH *@
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Brand</td>
+                <td>@car.Model</td>
+                <td>@car.Price.ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
